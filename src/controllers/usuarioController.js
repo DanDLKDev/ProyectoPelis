@@ -11,9 +11,9 @@ exports.obtenerUsuarios = (req, res) => {
 };
 
 exports.crearUsuario = (req, res) => {
-    const { nombre, email, contrasena, rol_id } = req.body;
-    connection.query('INSERT INTO usuarios (nombre, email, contrasena, rol_id) VALUES (?, ?, ?, ?)',
-        [nombre, email, contrasena, rol_id], (err, results) => {
+    const { nombre, email, password, rol_id } = req.body;
+    connection.query('INSERT INTO usuarios (nombre, email, password, rol_id) VALUES (?, ?, ?, ?)',
+        [nombre, email, password, rol_id], (err, results) => {
             if (err) {
                 res.status(500).send(err);
                 return;
@@ -35,9 +35,9 @@ exports.obtenerUsuarioPorId = (req, res) => {
 
 exports.actualizarUsuario = (req, res) => {
     const { id } = req.params;
-    const { nombre, email, contrasena, rol_id } = req.body;
-    connection.query('UPDATE usuarios SET nombre = ?, email = ?, contrasena = ?, rol_id = ? WHERE id = ?',
-        [nombre, email, contrasena, rol_id, id], (err, results) => {
+    const { nombre, email, password, rol_id } = req.body;
+    connection.query('UPDATE usuarios SET nombre = ?, email = ?, password = ?, rol_id = ? WHERE id = ?',
+        [nombre, email, password, rol_id, id], (err, results) => {
             if (err) {
                 res.status(500).send(err);
                 return;
