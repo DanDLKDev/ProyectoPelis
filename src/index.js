@@ -1,8 +1,7 @@
 
 const bodyParser = require('body-parser');
 
-// Middleware para parsear JSON
-app.use(bodyParser.json());
+
 
 const express = require('express');
 
@@ -13,7 +12,8 @@ const db = require('./db');
 // Middleware para parsear JSON
 app.use(express.json());
 
-
+// Middleware para parsear JSON
+app.use(bodyParser.json());
 
 // Middleware para servir archivos estáticos desde el directorio frontend
 app.use(express.static(path.join(__dirname, 'frontend')));
