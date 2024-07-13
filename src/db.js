@@ -27,7 +27,16 @@ const mysql = require('mysql');
 const config = require('./config.js');  // Asegúrate de que la ruta sea correcta
 
 // Crea la conexión a la base de datos
-const db = mysql.createConnection({
+/*const db = mysql.createConnection({
+  host: config.DB_HOST,
+  user: config.DB_USER,
+  password: config.DB_PASSWORD,
+  database: config.DB_NAME,
+  port: config.DB_PORT
+});
+*/
+const db = mysql.createPool({
+  connectionLimit: 10,
   host: config.DB_HOST,
   user: config.DB_USER,
   password: config.DB_PASSWORD,
