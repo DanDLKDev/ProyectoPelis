@@ -1,4 +1,8 @@
 
+const bodyParser = require('body-parser');
+
+// Middleware para parsear JSON
+app.use(bodyParser.json());
 
 const express = require('express');
 

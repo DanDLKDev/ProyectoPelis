@@ -1,9 +1,9 @@
 
 module.exports = {
     PORT: process.env.PORT || 3000,
-    DB_HOST: process.env.DB_HOST || 'localhost',
+    DB_HOST: process.env.DB_HOST || 'roundhouse.proxy.rlwy.net',
     DB_USER: process.env.DB_USER || 'root',
-    DB_PASSWORD: process.env.DB_PASSWORD || 'LimoneroDelFondo',
-    DB_NAME: process.env.DB_NAME || 'pelicula_db',
-    DB_PORT: process.env.DB_PORT || 3306
+    DB_PASSWORD: process.env.DB_PASSWORD || 'uKRMjlhyKwgNqlgIxTyaxjzbpWNWhsGf',
+    DB_NAME: process.env.DB_NAME || 'railway',
+    DB_PORT: process.env.DB_PORT || 31678
   };
