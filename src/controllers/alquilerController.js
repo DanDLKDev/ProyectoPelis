@@ -34,9 +34,9 @@ exports.obtenerAlquilerPorId = (req, res) => {
 
 exports.actualizarAlquiler = (req, res) => {
     const { id } = req.params;
-    const { usuario_id, pelicula_id, fecha_alquiler, fecha_devolucion, valor_alquiler } = req.body;
-    const sql = 'UPDATE alquileres SET usuario_id = ?, pelicula_id = ?, fecha_alquiler = ?, fecha_devolucion = ?, valor_alquiler = ? WHERE id = ?';
-    connection.query(sql, [usuario_id, pelicula_id, fecha_alquiler, fecha_devolucion, valor_alquiler, id], (err, results) => {
+    const { usuario_id, pelicula_id, fecha_alquiler, fecha_devolucion } = req.body;
+    const sql = 'UPDATE alquileres SET usuario_id = ?, pelicula_id = ?, fecha_alquiler = ?, fecha_devolucion = ? WHERE id = ?';
+    connection.query(sql, [usuario_id, pelicula_id, fecha_alquiler, fecha_devolucion,  id], (err, results) => {
         if (err) {
             return res.status(500).json({ error: err.message });
         }
