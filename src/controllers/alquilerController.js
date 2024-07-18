@@ -1,9 +1,9 @@
 const connection = require('../db');
 
 exports.crearAlquiler = (req, res) => {
-    const { usuario_id, pelicula_id, fecha_alquiler, fecha_devolucion, valor_alquiler } = req.body;
-    const sql = 'INSERT INTO alquileres (usuario_id, pelicula_id, fecha_alquiler, fecha_devolucion, valor_alquiler) VALUES (?, ?, ?, ?, ?)';
-    connection.query(sql, [usuario_id, pelicula_id, fecha_alquiler, fecha_devolucion, valor_alquiler], (err, results) => {
+    const { usuario_id, pelicula_id, fecha_alquiler, fecha_devolucion } = req.body;
+    const sql = 'INSERT INTO alquileres (usuario_id, pelicula_id, fecha_alquiler, fecha_devolucion) VALUES (?, ?, ?, ?)';
+    connection.query(sql, [usuario_id, pelicula_id, fecha_alquiler, fecha_devolucion], (err, results) => {
         if (err) {
             return res.status(500).json({ error: err.message });
         }
